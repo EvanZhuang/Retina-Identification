@@ -1,0 +1,97 @@
+\documentclass[a4paper,11pt]{article}
+\setlength{\textwidth}{15.93cm} \setlength{\textheight}{24.61cm}
+\oddsidemargin=-0.0cm \topmargin=-1.33cm
+\usepackage{charter,eulervm}
+\renewcommand{\baselinestretch}{1.1}
+\usepackage{amsthm,amsmath,amssymb,upgreek,marvosym}
+\usepackage{makeidx}  % allows for indexgeneration
+\usepackage{paralist}
+\usepackage{subfig}
+\usepackage{tabularx}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[pdftex,breaklinks,colorlinks,
+    citecolor={blue}, linkcolor={blue},urlcolor=Maroon]{hyperref}
+\usepackage{tkz-graph}
+\usetikzlibrary{arrows,shapes,decorations.pathmorphing,positioning, fit, calc}
+
+\graphicspath{{./images/}}%helpful if your graphic files are in another directory
+%
+\theoremstyle{plain} %remark,  plain
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}{Definition}
+\def\boxit#1{\vbox{\hrule\hbox{\vrule\kern4pt
+  \vbox{\kern1pt#1\kern1pt}
+\kern2pt\vrule}\hrule}}
+
+\newcommand{\keywords}[1]{\bigskip \par\noindent
+{\small{\em Keywords\/}: #1}}
+\newcommand{\opt}[2]{\ensuremath{{\mathtt{#1}(#2)}}}
+\newcommand{\comment}[1]{\`$\setminus\!\!\setminus${\em #1}}
+
+\title{\vspace{-2cm}Biometrics and Security \\ Assignment 2 Report}
+\author{Hey guys add your names here: \\
+	Xiating Ouyang 14111773D \\
+	}
+\date{}
+
+\begin{document}
+\maketitle	
+
+\section{Introduction}
+Retina is an ideal biometric for security purposes for the complexity of vessels in the retina and the impossibility to alter retina through surgeries. In this report, we investigate the state-of-the-art retina recognition algorithm on open databases of retina images and evaluate its performance.
+
+\section{Retina recognition glossories}
+
+\subsection{Performance}
+The retina recognition algorithms have been intensively investigated. However, their performance evaluation results are largely limited due to the insufficient retina images available. For example, an algorithm utilizing the correlation and covariance matrix can achieve 100\% recongition rate on 20 images, when the testing data is the same as the training data \cite{kakarwal2010analysis}. Other attempts include using the Artificial Neural Networks (ANN) and Fuzzy Inference, which achieves an identification rate of 93\% and 96\%, respectively \cite{borah2015retina}.
+
+
+\subsection{Applications}
+Retina recognition can be used as a biometric feature to ensure the security of entities and institution. The acquisition of a retina sample requires the user to peep into an eyepiece for a relatively long time for the system to acurately capture an image of the retina, which adversely affect the usability of this system. However, due to its high accuracy in recognition, it has been utilized by government agencies including the Federal Bureau of Investigation (FBI), the Central Intelligence Agency (CIA) and the National Aeronautics and Space Administration (NASA). Apart from its security-related applications, it is also applied in medical institutions to detect hereditary diseases.
+
+\subsection{Database availability}
+
+The STARE (STructured Analysys of the Retina) Project started in 1975, aiming at developing a facilitating tool for ophthalmologists to automatically diagnose diseases. There are around 400 raw images available at http://cecas.clemson.edu/$\sim$ahoover/stare/, with the limitation that no clear label of identity is provided. See sample from Figure \ref{fig1}.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=.35\textwidth, height=.35\textheight,keepaspectratio]{im0019}
+	\end{center}
+	\caption{Sample from the STARE database}
+	\label{fig1}
+\end{figure}
+
+The VARPA database is an open database storing 233 images from 139 individuals, and is accessible at http://www.varpa.es/research/biometrics.html\#databases. Full access has to be granted by the owner, Dr. Marcos Ortega Hortas. We were granted access to the database on November 6, 2017. See sample from Figure \ref{fig2}.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=.35\textwidth, height=.35\textheight,keepaspectratio]{IM000003_17}
+	\end{center}
+	\caption{Sample from the VARPA database}
+	\label{fig2}
+\end{figure}
+
+\subsection{Acquisition devices}
+Retina recognition is essentially to study the retinal vascular pattern hidden within our eyes, which is shown not to have the tendency to change while aging \cite{fatima2013feature}. 
+
+
+
+\section{Performance evaluation}
+
+\subsection{Execution}
+
+\subsection{Graphical summaries}
+
+\subsection{Further improvements}
+
+
+\section{Concluding remarks}
+In this project, we have thoroughly investigated the retina recognition methods. Its applications and acquisition methods are also revisited. We have also tested the state-of-the-art algorithm using the publically available databases and produced preliminary performance summary for the algorithm. Future refinement to the algorithm would include using some [random bullshiting techniques] to further improve the accuracy of retina recognition. Meanwhile, it is also an opportunity to create more advanced devices than the currently available ones to provide convenience to acquire the retina sample.
+
+
+\bibliographystyle{unsrt}
+\bibliography{report}
+\end{document}
