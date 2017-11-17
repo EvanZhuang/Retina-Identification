@@ -6,7 +6,8 @@
 \usepackage{amsthm,amsmath,amssymb,upgreek,marvosym}
 \usepackage{makeidx}  % allows for indexgeneration
 \usepackage{paralist}
-\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{caption}
 \usepackage{tabularx}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage[pdftex,breaklinks,colorlinks,
@@ -31,8 +32,8 @@
 \newcommand{\opt}[2]{\ensuremath{{\mathtt{#1}(#2)}}}
 \newcommand{\comment}[1]{\`$\setminus\!\!\setminus${\em #1}}
 
-\title{\vspace{-2cm}Biometrics and Security \\ Assignment 2 Report}
-\author{Hey guys add your names here: \\
+\title{\vspace{-2cm}COMP4134 - Biometrics and Security \\ Assignment 2 Report}
+\author{
 	Xiating Ouyang 14111773D \\
 	Yuanjing Shi 13104584D \\
 	Fengming Liu 15104126D \\
@@ -59,30 +60,34 @@ Retina recognition can be used as a biometric feature to ensure the security of 
 \subsection{Database availability}
 
 The STARE (STructured Analysys of the Retina) Project started in 1975, aiming at developing a facilitating tool for ophthalmologists to automatically diagnose diseases. There are around 400 raw images available at http://cecas.clemson.edu/$\sim$ahoover/stare/, with the limitation that no clear label of identity is provided. See sample from Figure \ref{fig1}.
+\begin{figure}
+	\begin{subfigure}{0.4\textheight}
+		\includegraphics[width=0.4\linewidth]{im0019}
+		\caption{Sample from the STARE database}
+		\label{fig1}
+	\end{subfigure}
+    \begin{subfigure}{0.4\textheight}
+		\includegraphics[width=0.4\linewidth]{IM000003_17}
+		\caption{Sample from the VARPA database}
+		\label{fig2}
+	\end{subfigure}
 
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=.35\textwidth, height=.35\textheight,keepaspectratio]{im0019}
-	\end{center}
-	\caption{Sample from the STARE database}
-	\label{fig1}
-\end{figure}
+\end{figure}|
 
 The VARPA database is an open database storing 233 images from 139 individuals, and is accessible at http://www.varpa.es/research/biometrics.html\#databases. Full access has to be granted by the owner, Dr. Marcos Ortega Hortas. We were granted access to the database on November 6, 2017. See sample from Figure \ref{fig2}.
 
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=.35\textwidth, height=.35\textheight,keepaspectratio]{IM000003_17}
-	\end{center}
-	\caption{Sample from the VARPA database}
-	\label{fig2}
-\end{figure}
-
+The DRIVE database has been established to enable comparative studies on segmentation of blood vessels in retinal images. The research community is invited to test their algorithms on this database and share the results with other researchers through this web site. 
 \subsection{Acquisition devices}
 Retina recognition is essentially to study the retinal vascular pattern hidden within our eyes, which is shown not to have the tendency to change while aging \cite{fatima2013feature}. 
 
+<<<<<<< HEAD
+It is a common practice that retina imaging would conducted by an ophthalmologist, a medical doctor that specializes in the function, diseases, and structure of the human eye, during a process of a clinical examination. An optical camera is used to see through the pupil of the eye to the rear inner surface of the eyeball. A picture is taken showing the optic nerve, fovea, surrounding vessels, and the retinal layer.
+
+To be more specific, take DRIVE the retinal image database for vessel extraction as an example, the photographs for the DRIVE database were obtained from a diabetic retinopathy screening program in The Netherlands. The screening population consisted of 400 diabetic subjects between 25-90 years of age. The images were acquired using a Canon CR5 non-mydriatic 3CCD camera with a 45 degree field of view (FOV). Each image was captured using 8 bits per color plane at 768 by 584 pixels. The FOV of each image is circular with a diameter of approximately 540 pixels. For this database, the images have been cropped around the FOV. For each image, a mask image is provided that delineates the FOV.
+=======
 \subsection{Remedies insufficient subject images}
 Since most of the public retina databases are for medical usage only, normally only one image is captured for each subject, thereby leaving a difficulty to compute genuine and imposter distribution. Dias et al. \cite{dias2014retinal} suggests that the retina image captured are prone to brightness and unpredicted noise variations. Therefore, we would simulate such changes to manually produce images that are of the same person but with different qualities. 
+>>>>>>> 048f9c4d3708fc95295403dc271d44d3442dc4a0
 
 
 \section{Performance evaluation}
