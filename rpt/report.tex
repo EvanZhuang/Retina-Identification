@@ -1,18 +1,19 @@
 \documentclass[a4paper,11pt]{article}
 \setlength{\textwidth}{15.93cm} \setlength{\textheight}{24.61cm}
 \oddsidemargin=-0.0cm \topmargin=-1.33cm
+
 \usepackage{charter,eulervm}
 \renewcommand{\baselinestretch}{1.1}
 \usepackage{amsthm,amsmath,amssymb,upgreek,marvosym}
 \usepackage{makeidx}  % allows for indexgeneration
 \usepackage{paralist}
-\usepackage{subcaption}
-\usepackage{caption}
+\usepackage{subfig}
 \usepackage{tabularx}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage[pdftex,breaklinks,colorlinks,
     citecolor={blue}, linkcolor={blue},urlcolor=Maroon]{hyperref}
 \usepackage{tkz-graph}
+\usepackage{url}
 \usetikzlibrary{arrows,shapes,decorations.pathmorphing,positioning, fit, calc}
 
 \graphicspath{{./images/}}%helpful if your graphic files are in another directory
@@ -59,22 +60,23 @@ Retina recognition can be used as a biometric feature to ensure the security of 
 
 \subsection{Database availability}
 
-The STARE (STructured Analysys of the Retina) Project started in 1975, aiming at developing a facilitating tool for ophthalmologists to automatically diagnose diseases. There are around 400 raw images available at http://cecas.clemson.edu/$\sim$ahoover/stare/, with the limitation that no clear label of identity is provided. See sample from Figure \ref{fig1}.
-\begin{figure}
-	\begin{subfigure}{0.4\textheight}
-		\includegraphics[width=0.4\linewidth]{im0019}
-		\caption{Sample from the STARE database}
-		\label{fig1}
-	\end{subfigure}
-    \begin{subfigure}{0.4\textheight}
-		\includegraphics[width=0.4\linewidth]{IM000003_17}
-		\caption{Sample from the VARPA database}
-		\label{fig2}
-	\end{subfigure}
+The STARE (STructured Analysys of the Retina) Project started in 1975, aiming at developing a facilitating tool for ophthalmologists to automatically diagnose diseases. There are around 400 raw images available at \url{http://cecas.clemson.edu/~ahoover/stare/}, with the limitation that no clear label of identity is provided. See sample from Figure \ref{fig}.
 
+\begin{figure}
+	\centering
+	\subfloat[DRIVE database]{
+		\includegraphics[width=0.276\textwidth,height=0.4\textheight,keepaspectratio]{im0019}
+	}
+	\quad
+	\subfloat[STARE database]{
+		\includegraphics[width=0.35\textwidth,height=0.4\textheight,keepaspectratio]{IM000003_17}
+	}
+	\caption{Sample retina images.}
+	\label{fig}
 \end{figure}
 
-The VARPA database is an open database storing 233 images from 139 individuals, and is accessible at http://www.varpa.es/research/biometrics.html\#databases. Full access has to be granted by the owner, Dr. Marcos Ortega Hortas. We were granted access to the database on November 6, 2017. See sample from Figure \ref{fig2}.
+
+The VARPA database is an open database storing 233 images from 139 individuals, and is accessible at \url{http://www.varpa.es/research/biometrics.html#databases}. Full access has to be granted by the owner, Dr. Marcos Ortega Hortas. Unfortunately, we are not.
 
 The DRIVE database has been established to enable comparative studies on segmentation of blood vessels in retinal images. The research community is invited to test their algorithms on this database and share the results with other researchers through this web site.
 
