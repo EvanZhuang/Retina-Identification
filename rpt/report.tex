@@ -33,7 +33,7 @@
 \newcommand{\opt}[2]{\ensuremath{{\mathtt{#1}(#2)}}}
 \newcommand{\comment}[1]{\`$\setminus\!\!\setminus${\em #1}}
 
-\title{\vspace{-2cm}COMP4134 - Biometrics and Security \\ Assignment 2 Report}
+\title{\vspace{6cm}COMP4134 - Biometrics and Security \\ Assignment 2 Report}
 \author{
 	Xiating Ouyang 14111773D \\
 	Yuanjing Shi 13104584D \\
@@ -45,7 +45,7 @@
 
 \begin{document}
 \maketitle	
-
+\newpage
 \section{Introduction}
 Retina is an ideal biometric for security purposes for the complexity of vessels in the retina and the impossibility to alter retina through surgeries. In this report, we investigate the state-of-the-art retina recognition algorithm on open databases of retina images and evaluate its performance.
 
@@ -71,6 +71,10 @@ The STARE (STructured Analysys of the Retina) Project started in 1975, aiming at
 	\subfloat[STARE database]{
 		\includegraphics[width=0.35\textwidth,height=0.4\textheight,keepaspectratio]{IM000003_17}
 	}
+	\quad
+	\subfloat[RIDB database]{
+		\includegraphics[width=0.35\textwidth,height=0.4\textheight,keepaspectratio]{IM000002_10}
+	}
 	\caption{Sample retina images.}
 	\label{fig}
 \end{figure}
@@ -78,7 +82,10 @@ The STARE (STructured Analysys of the Retina) Project started in 1975, aiming at
 
 The VARPA database is an open database storing 233 images from 139 individuals, and is accessible at \url{http://www.varpa.es/research/biometrics.html#databases}. Full access has to be granted by the owner, Dr. Marcos Ortega Hortas. Unfortunately, we are not.
 
-The DRIVE database has been established to enable comparative studies on segmentation of blood vessels in retinal images. The research community is invited to test their algorithms on this database and share the results with other researchers through this web site.
+The DRIVE database has been established to enable comparative studies on segmentation of blood vessels in retinal images. The research community is invited to test their algorithms on this database and share the results with other researchers through this web site. It is available at \url{https://www.isi.uu.nl/Research/Databases/DRIVE/}.
+
+
+The RIDB database records 100 healthy images taken from 20 individuals, 5 images for each individuals respectively. It is accessible at \url{http://biomisa.org/ridb.html} once the name and institution information are provided. 
 
 
 \subsection{Acquisition devices}
@@ -87,24 +94,54 @@ Retina recognition is essentially to study the retinal vascular pattern hidden w
 It is a common practice that retina imaging would conducted by an ophthalmologist, a medical doctor that specializes in the function, diseases, and structure of the human eye, during a process of a clinical examination. An optical camera is used to see through the pupil of the eye to the rear inner surface of the eyeball. A picture is taken showing the optic nerve, fovea, surrounding vessels, and the retinal layer.
 
 To be more specific, take DRIVE the retinal image database for vessel extraction as an example, the photographs for the DRIVE database were obtained from a diabetic retinopathy screening program in The Netherlands. The screening population consisted of 400 diabetic subjects between 25-90 years of age. The images were acquired using a Canon CR5 non-mydriatic 3CCD camera with a 45 degree field of view (FOV). Each image was captured using 8 bits per color plane at 768 by 584 pixels. The FOV of each image is circular with a diameter of approximately 540 pixels. For this database, the images have been cropped around the FOV. For each image, a mask image is provided that delineates the FOV.
+
+
 \subsection{Emerging applications on Retinal Biometrics}
+
+
 
 \subsection{Remedies insufficient subject images}
 Since most of the public retina databases are for medical usage only, normally only one image is captured for each subject, thereby leaving a difficulty to compute genuine and imposter distribution. Dias et al. \cite{dias2014retinal} suggests that the retina image captured are prone to brightness and unpredicted noise variations. Therefore, we would simulate such changes to manually produce images that are of the same person but with different qualities. 
 
+For RIDB, the sample size is limited as only 20 individuals are involved. We dedicate 3 of the 5 images for each subject for training purposes.
+
+
+\section{Identification techniques}
+
+\subsection{Segmentation}
+Since the images include the black frames of the camera, the outter parts of the images are all black, shifting the imposter distribution towards the genuine distribution. Thus we wish to segment the images into parts. We extract an ellipse shape from each image and use that eclipse as the input. Recall that an eclipse is a quadratic curve given by the following equation in the $x-y$ plane:
+$$\frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} = 1$$
+
+We manually extract an ellipse area which shares the center of the original image with its major axis and semi-major axis set to be the 85\% of the width and height of the original image. 	 
+
+\subsection{Feature extraction}
+The preprocessing procedures involve extracting the vascular vessels from the retina images and enhancing it into black and white images. The retinal blood vessels are enhanced using CLAHE and segmented using Fuzzy C-Means. The edges are detected using Region based active contour method \cite{segmentation2017web}. The code provided from the link is a GUI software, and we extract the core component from the software for our project.
+
+\subsection{Similarity metrics}
 
 
 \section{Performance evaluation}
 
-\subsection{Execution}
+In this section, we evaluate the performances of our identification algorithm using the STARE database, randomly picking 50 subjects, each providing 12 samples. We also test our method on the entire RIDB database. We will present the Receivor Operation Characteristics Curve (ROC), the FNIR-FPIR rate curve and the Cumulative Matching Characteristics Curve (CMC).
 
-\subsection{Graphical summaries}
 
-\subsection{Further improvements}
+\subsection{Artificial neural network}
+Thanks Zhuang sir.
+\subsection{Hamming distance}
+
+\subsection{some awesome technique awaits to be discovered}
+
+
+
+\section{Further improvements}
+It has come to our attention that most of the retina databases are for medical uses. Normally there is only one image available for each subject, putting the studies of identification algorithms at a disadvantage. The only database claimed to have ID labels VARPA requires grant of access, and the owner is inresponsive to all requests. If possible, we propose making our own retina database exclusively for retina identification studies. My friend in the School of Optometry is interested in this project, and would like to provide a linkage between the two departments.
+
+We kept the frame in the images for processing, which has brought much errors in the comparison results. More accurate results could be obtained if we manage to remove them from the images and only keep the blood vessel images for our experiment.
+
 
 
 \section{Concluding remarks}
-In this project, we have thoroughly investigated the retina recognition methods. Its applications and acquisition methods are also revisited. We have also tested the state-of-the-art algorithm using the publically available databases and produced preliminary performance summary for the algorithm. Future refinement to the algorithm would include using some [random bullshiting techniques] to further improve the accuracy of retina recognition. Meanwhile, it is also an opportunity to create more advanced devices than the currently available ones to provide convenience to acquire the retina sample.
+In this project, we have thoroughly investigated the retina recognition methods. Its applications and acquisition methods are also revisited. We have also tested the state-of-the-art algorithm using the publically available databases and produced preliminary performance summary for the algorithm. Future refinement to the algorithm would include using some smoothing techniques  to further improve the accuracy of retina recognition. Meanwhile, it is also an opportunity to create more advanced devices than the currently available ones to provide convenience to acquire the retina sample.
 
 
 \bibliographystyle{unsrt}
