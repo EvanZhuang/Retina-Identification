@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  17 NOV 2017 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  17 NOV 2017 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,14 +857,14 @@ LaTeX Font Info:    Try loading font information for U+zeuex on input line 47.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-<./images/im0019.jpg, id=58, 702.625pt x 607.26875pt>
+<./images/im0019.jpg, id=62, 702.625pt x 607.26875pt>
 File: ./images/im0019.jpg Graphic file (type jpg)
 
 <use ./images/im0019.jpg>
 Package pdftex.def Info: ./images/im0019.jpg used on input line 65.
 (pdftex.def)             Requested size: 112.03215pt x 96.82213pt.
 
-<./images/IM000003_17.jpg, id=59, 1509.64pt x 1003.75pt>
+<./images/IM000003_17.jpg, id=63, 1509.64pt x 1003.75pt>
 File: ./images/IM000003_17.jpg Graphic file (type jpg)
 
 <use ./images/IM000003_17.jpg>
@@ -879,21 +879,21 @@ Overfull \hbox (109.22757pt too wide) in paragraph at lines 64--74
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2 <./images/im0019.jpg> <./images/IM000003_17.jpg>] (./report.bbl) [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
 
 (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 4E5C3039E738BA7687F4E343C7E45EE4;763.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
+(rerunfilecheck)             Checksum: 7EAEEE3960A4FA9853CB3C36FD23E98C;856.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 113.
  ) 
 Here is how much of TeX's memory you used:
- 21531 strings out of 492995
- 427624 string characters out of 6132704
+ 21533 strings out of 492995
+ 427654 string characters out of 6132704
  509515 words of memory out of 5000000
- 24647 multiletter control sequences out of 15000+600000
+ 24648 multiletter control sequences out of 15000+600000
  25521 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,9n,77p,706b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -902,10 +902,10 @@ exlive/2017/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/2
 017/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb>
-Output written on report.pdf (3 pages, 200544 bytes).
+Output written on report.pdf (3 pages, 203624 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 112 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
+ 23 named destinations out of 1000 (max. 500000)
+ 127 words of extra memory for PDF output out of 10000 (max. 10000000)
 
